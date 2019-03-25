@@ -1,9 +1,9 @@
-sudo: required 
+sudo: required
   services:
     - docker
 
 before_install: 
-  - docker build myimage/travic-ci-test -f Dockerfile.dev .
+  - docker build -t myimage/trav -f Dockerfile.dev .
 
   script: 
-    - docker run myimage/travic-ci-test npm run test -- --coverage
+    - docker run myimage/trav npm run test -- --coverage
