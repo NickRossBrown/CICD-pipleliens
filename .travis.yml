@@ -1,4 +1,4 @@
-rudo: required 
+sudo: required 
   services:
     - docker
 
