@@ -7,3 +7,16 @@ before_install:
 
 script: 
   - docker run myimage/trav npm run test -- --coverage
+
+delpoy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-west-2-523913544371"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id:
+  secret_access_key: AWS_ACCESS_KEY
+    secure: "$AWS_SECRET_KEY"  
