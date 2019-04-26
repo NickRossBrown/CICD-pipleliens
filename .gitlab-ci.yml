@@ -33,6 +33,7 @@ build:
 test:
   stage: test
   script:
+  - docker build -t containerid/callmoms:latest -f Dockerfile.dev .
   - docker run containerid/callmoms:latest npm run test -- --coverage
 
 #=========
