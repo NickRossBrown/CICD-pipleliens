@@ -4,12 +4,15 @@ image: docker:latest
 # improved performance.
 variables:
   DOCKER_DRIVER: overlay2
+  REPOSITORY_URL: addURLhere.com
 
 services:
 - docker:dind
 
 before_script:
-- docker info
+ - docker info
+ - apk add --no-cache curl jq python py-pip
+ - pip install awscli
 
 stages:
  - build
@@ -35,18 +38,16 @@ test:
 #=========
 # Deploy
 #=========
-delpoy:
-  provider: elasticbeanstalk
-  region: "us-west-2"
-  app: "docker-react"
-  env: "DockerReact-env"
-  bucket_name: "elasticbeanstalk-us-west-2-523913544371"
-  bucket_path: "docker-react"
-  on:
-    branch: master
-  access_key_id: AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"  
+build:
+  stage: build
+  script:
+    - $(aws ecr get-login --no-include-email --region us-east-1)
+    - docker build -t $REPOSITORY_URL .
+    - docker push $REPOSITORY_URL
+  only:
+    - master
+  tags:
+    - docker
 
 
 
