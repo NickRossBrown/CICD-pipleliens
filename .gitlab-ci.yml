@@ -25,7 +25,7 @@ stages:
 build:
   stage: build
   script:
-  - docker build -t myimage/gitlab -f Dockerfile.dev .
+  - docker build -t containerid/callmoms:latest -f Dockerfile.dev .
   
 #=========
 # Test
@@ -33,7 +33,7 @@ build:
 test:
   stage: test
   script:
-  - docker run myimage/gitlab npm run test -- --coverage
+  - docker run containerid/callmoms:latest npm run test -- --coverage
 
 #=========
 # Deploy
