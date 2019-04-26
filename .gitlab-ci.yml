@@ -4,7 +4,7 @@ image: docker:latest
 # improved performance.
 variables:
   DOCKER_DRIVER: overlay2
-  REPOSITORY_URL: addURLhere.com
+  REPOSITORY_URL: CallYourMomsLeague.us-east-2.elasticbeanstalk.com 
 
 services:
 - docker:dind
