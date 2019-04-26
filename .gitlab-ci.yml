@@ -11,8 +11,8 @@ services:
 
 before_script:
  - docker info
- - apk add --no-cache curl jq python py-pip
- - pip install awscli
+ # - apk add --no-cache curl jq python py-pip
+ # - pip install awscli
 
 stages:
  - build
@@ -40,12 +40,12 @@ test:
 #=========
 build:
   stage: build
+  only:
+    - master
   script:
     - $(aws ecr get-login --no-include-email --region us-east-1)
     - docker build -t $REPOSITORY_URL .
     - docker push $REPOSITORY_URL
-  only:
-    - master
   tags:
     - docker
 
