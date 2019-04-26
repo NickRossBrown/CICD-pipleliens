@@ -31,10 +31,6 @@ test:
   stage: test
   script:
   - docker run myimage/gitlab npm run test -- --coverage
-stages:
- - test
- - build
- - deploy
 
 #=========
 # Deploy
@@ -51,3 +47,6 @@ delpoy:
   access_key_id: AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"  
+
+
+
