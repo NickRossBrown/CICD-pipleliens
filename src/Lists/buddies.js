@@ -1,7 +1,7 @@
 export const buddies = [
   {
     "id": 1,
-    "name": "Leanne Graham",
+    "name": "Stroodle Boots",
     "username": "Bret",
     "email": "Sincere@april.biz",
     "address": {
@@ -24,7 +24,7 @@ export const buddies = [
   },
   {
     "id": 2,
-    "name": "Ervin Howell",
+    "name": "N8o",
     "username": "Antonette",
     "email": "Shanna@melissa.tv",
     "address": {
@@ -47,7 +47,7 @@ export const buddies = [
   },
   {
     "id": 3,
-    "name": "Clementine Bauch",
+    "name": "Ethan Waite",
     "username": "Samantha",
     "email": "Nathan@yesenia.net",
     "address": {
@@ -70,7 +70,7 @@ export const buddies = [
   },
   {
     "id": 4,
-    "name": "Patricia Lebsack",
+    "name": "TJBJ",
     "username": "Karianne",
     "email": "Julianne.OConner@kory.org",
     "address": {
@@ -93,7 +93,7 @@ export const buddies = [
   },
   {
     "id": 5,
-    "name": "Chelsey Dietrich",
+    "name": "BEEZ",
     "username": "Kamren",
     "email": "Lucio_Hettinger@annie.ca",
     "address": {
@@ -116,7 +116,7 @@ export const buddies = [
   },
   {
     "id": 6,
-    "name": "Mrs. Dennis Schulist",
+    "name": "Tough Guy",
     "username": "Leopoldo_Corkery",
     "email": "Karley_Dach@jasper.info",
     "address": {
@@ -139,7 +139,7 @@ export const buddies = [
   },
   {
     "id": 7,
-    "name": "Kurtis Weissnat",
+    "name": "Matt Chadwick",
     "username": "Elwyn.Skiles",
     "email": "Telly.Hoeger@billy.biz",
     "address": {
@@ -162,7 +162,7 @@ export const buddies = [
   },
   {
     "id": 8,
-    "name": "Nicholas Runolfsdottir V",
+    "name": "Spore",
     "username": "Maxime_Nienow",
     "email": "Sherwood@rosamond.me",
     "address": {
