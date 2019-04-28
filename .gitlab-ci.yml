@@ -17,7 +17,7 @@ before_script:
 stages:
  - build
  - test
- - deploy
+#  - deploy
  
 #=========
 # Build
@@ -39,16 +39,16 @@ test:
 #=========
 # Deploy
 #=========
-deploy:
-  stage: deploy
-  only:
-    - master
-  script:
-    - $(aws ecr get-login --no-include-email --region us-east-1)
-    - docker build -t $REPOSITORY_URL .
-    - docker push $REPOSITORY_URL
-  tags:
-    - docker
+# deploy:
+#   stage: deploy
+#   only:
+#     - master
+#   script:
+#     - $(aws ecr get-login --no-include-email --region us-east-1)
+#     - docker build -t $REPOSITORY_URL .
+#     - docker push $REPOSITORY_URL
+#   tags:
+#     - docker
 
 
 
