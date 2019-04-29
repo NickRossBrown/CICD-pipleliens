@@ -2,48 +2,47 @@ import React, { Component } from 'react';
 import './App.css';
 
 import CardList from './components/card-list';
-import { buddies } from './Lists/buddies';
 import SearchBox from'./components/SearchBox';
 import Scroll from './components/Scroll'
+import { members } from './MemberData/members'
 
 class App extends Component {
 
     constructor() {
       super()
       this.state = {
-        buddies: [],
+        members: [],
         searchField: ''
       }
     }
 
     componentDidMount() {
-      this.setState({ buddies: buddies })
+      this.setState({ members: members })
     }
 
     onSearchChange = (event) => {
       this.setState({ searchField: event.target.value })
-      const filerBuddies = this.state.buddies.filter( buddies => {
-        return buddies.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+      const filerMembers = this.state.members.filter( members => {
+        return members.name.toLowerCase().includes(this.state.searchField.toLowerCase())
       })
-      console.log( filerBuddies )
+      console.log( filerMembers )
     }
 
     render() {
-      const filerBuddies = this.state.buddies.filter( buddies => {
-        return buddies.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+      const filerMembers = this.state.members.filter( members => {
+        return members.name.toLowerCase().includes(this.state.searchField.toLowerCase())
       })
 
       return (
       <div>
         <div>
-          <h1>Friends List</h1>
-          <SearchBox searchChange={this.onSearchChange}></SearchBox>
+          <h1 className="washed-blue">Members List</h1>
+          <SearchBox className="flex items-center"searchChange={this.onSearchChange}></SearchBox>
           <Scroll>
-            <CardList buddies={ filerBuddies }></CardList>
+            <CardList members={ filerMembers }></CardList>
           </Scroll>
           
-        </div>
-        {/* <CardList robots={robots}></CardList> */}
+         </div>
         </div>
       )
     }
